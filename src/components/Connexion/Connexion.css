@@ -1,0 +1,49 @@
+@import '../assets/variables.css';
+
+body{
+    background-image: url(".././assets/TM_FondComplet.png");
+    text-align: center;
+}
+
+form {
+    max-width: 400px;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+/* Style pour les labels */
+label {
+display: block;
+margin-bottom: 8px;
+font-weight: bold;
+color: rgb(255, 255, 255);
+}
+
+/* Style pour les champs de saisie */
+input[type="text"],
+input[type="password"] {
+width: 100%;
+padding: 12px;
+margin-bottom: 15px;
+border: 1px solid #ccc;
+border-radius: 8px;
+box-sizing: border-box; /* Pour inclure le padding dans la largeur */
+}
+
+/* Style pour le bouton */
+button {
+width: 60%;
+padding: 12px;
+margin-top: 90px;
+border: none;
+border-radius: 4px;
+background-color:white;
+color: var(--couleur-tm);
+font-size: 16px;
+font-weight: bold;
+cursor: pointer;
+}
+button:hover {
+background-color: var(--couleur-tm);
+color: white;
+}
