@@ -1,11 +1,22 @@
-import logo from './logo.svg';
 import './App.css';
-import Connexion from './components/Connexion/Connexion';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import ConnexionServeur from './pages/ConnexionServeur';
+import Contact from './pages/Contact';
+import Home from './pages/Home';
+import Connexion from './pages/Connexion';
 
 function App() {  
   return (
     <div>
-      <Connexion/>
+      <BrowserRouter>
+        <Routes>
+          <Route index element={<Home/>} />
+          <Route path='/home' element={<Home/>} />
+          <Route path='/connexion' element={<Connexion/>} />
+          <Route path='/connexionserveur' element={<ConnexionServeur/>} />
+          <Route path='/contact' element={<Contact/>} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }

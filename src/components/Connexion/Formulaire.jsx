@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import logo from '../assets/TM_Titre.png';
-import './Connexion.css';
+import './Formulaire.css';
 
-const Connexion = () => {
+const Formulaire = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [tokenJWT, setTokenJWT] = useState('');
     const url = 'http://192.168.39.43:7293/8.1b/connexion';
 
     const handleUsernameChange = (event) => {
@@ -16,13 +14,9 @@ const Connexion = () => {
     const handlePasswordChange = (event) => {
       setPassword(event.target.value);
     };
-
-    const afficherToken = (event) =>{
-      setTokenJWT(event.target.value);
-    }
   
     const handleFormSubmit = (event) => {
-      event.preventDefault(); // Empêche le rechargement de la page
+      event.preventDefault();
         
       const data = {
         login: username, 
@@ -37,7 +31,6 @@ const Connexion = () => {
       axios.post(url, data, { headers })
         .then(response => {
           console.log('Réponse du serveur:', response.data);
-          setTokenJWT(response.data.contenu);
         })
         .catch(error => {
           console.error('Erreur lors de la requête:', error.response.data.contenu);
@@ -46,7 +39,6 @@ const Connexion = () => {
 
     return (
         <div>
-            <img src={logo} alt="Logo" />
             <form onSubmit={handleFormSubmit}>
                 <div>
                 <label htmlFor="username">Nom d'utilisateur</label>
@@ -68,9 +60,6 @@ const Connexion = () => {
                     required
                 />
                 </div>
-                <div>
-                <label htmlFor="Response">{afficherToken}</label>
-                </div>
                 <button type="submit">SE CONNECTER</button>
             </form>
         </div>
@@ -78,4 +67,4 @@ const Connexion = () => {
     )
 }
 
-export default Connexion
+export default Formulaire

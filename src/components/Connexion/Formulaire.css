@@ -1,9 +1,4 @@
-@import '../assets/variables.css';
-
-body{
-    background-image: url(".././assets/TM_FondComplet.png");
-    text-align: center;
-}
+@import '../../assets/variables.css';
 
 form {
     max-width: 400px;

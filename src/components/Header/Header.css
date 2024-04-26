@@ -1,0 +1,23 @@
+@import '../../assets/variables.css';
+
+nav{
+    display: flex;
+}
+ul{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+li{
+    list-style-type: none;
+    padding: 20px;
+}
+a{
+    font-size: x-large;
+    color: white;
+    text-decoration: none;
+}
+
+a:hover{
+    font-weight: bold;
+}
